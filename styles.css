@@ -14,6 +14,7 @@
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)),url('images/obrazok1.jpg');
 }
 
+
 .navbar{
     position: flex;
     display: flex;
@@ -169,12 +170,18 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    margin: 20vh;
+    margin-top: 20vh;
+    margin-bottom: 50px;
     height: 80%;
     justify-content: center;
     align-items: center;
     color: white;
     
+}
+
+
+.home-page-text.moveUp{
+    margin-top: 5vh;
 }
 
 .home-page-text h1{
