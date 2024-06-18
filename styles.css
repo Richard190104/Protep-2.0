@@ -1,0 +1,230 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.home-page-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    min-height: 700px;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)),url('images/obrazok1.jpg');
+}
+
+.navbar{
+    position: flex;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    max-width: 1920px;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar-container{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 0% 20vw;
+    width: 100%;
+    margin: 0px 20px;
+    max-width: 1920px;
+    font-size: 100%;
+    color: rgb(9, 199, 199);
+
+}
+
+.navbar-container ul{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    position: relative;
+    
+}
+
+.navbar-container .underline{   
+    margin: 0px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-container .underline a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-container .underline::after{
+    content: '';
+    position: relative;
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background:rgb(9, 199, 199);   
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 1s ease;
+    
+}
+
+
+.navbar-container .underline:hover::after{   
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menu-opener{
+    display: none;
+}
+
+.menu-btn{
+    visibility: visible;
+    width: 30px;
+    cursor: pointer;
+    
+  }
+  
+  .menu-btn-line {
+    width: 100%;
+    height: 2px;
+    margin-bottom: 4px;
+    background-color: rgb(9, 199, 199);
+    transition: transform 0.3s ease;
+  }
+  
+
+  .menu-btn.open .line-1 {
+    transform: translateY(4px) translateX(-2px) rotate(70deg);
+   
+  }
+  
+  .menu-btn.open .line-2 {
+    opacity: 0;
+  }
+  
+  .menu-btn.open .line-3 {
+    transform: translateY(-8px) translateX(8px) rotate(-70deg);
+   
+  }
+
+  .underline.btn{
+    font-size: 80%;
+    
+  }
+  .underline.btn a{
+    text-decoration: none;
+    color: white;
+    
+  }
+
+  #slide-bar{
+    display: none;
+    list-style-type: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #slide-bar li{
+    padding: 15px;
+  }
+
+  #slide-bar.active{
+    display: flex;
+    
+  }
+
+  @media screen and (max-width: 1200px) {
+    .navbar ul{
+    position: absolute;
+     top: -1000px;
+   }    
+   .menu-opener{
+    display: flex;
+}
+}
+@keyframes slideIn {
+    from { transform: translate(0%, -50%); } /* Start from top */
+    to { transform: translate(0%, 0%); }
+  }
+  
+  @keyframes slideOut {
+    from { transform: translate(0%, -500%); } /* Start from original position */
+    to { transform: translate(0%, -100%); }
+    
+  }
+
+
+
+.home-page-text{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 200px;
+    margin-bottom: 50px;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+
+.home-page-text h1{
+    border-top: 1px solid rgb(9, 199, 199);
+    padding: 15px;
+    border-bottom: 1px solid rgb(9, 199, 199);
+}
+
+.home-page-text p{
+    margin-top: 15px;
+    font-size: 125%;
+}
+
+.home-page-text .contact-us-button{
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid rgb(9, 199, 199);
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+   
+    
+}
+
+.home-page-text .contact-us-button:not(:hover){   
+    animation: normalise 1s forwards;
+}
+
+.home-page-text .contact-us-button:hover{   
+    animation: expand 1s forwards;
+}
+
+@keyframes expand{
+    from{width: 150px;}
+    to{
+        background-color: rgba(9, 199, 199, 0.377);
+        width: 300px;
+    }
+}
+
+@keyframes normalise{
+    from{width: 300px;
+    background-color: rgba(9, 199, 199, 0.377);
+    }
+    to{
+        background-color: rgba(9, 199, 199, 0);
+        width: 150px;
+    }
+}
+
