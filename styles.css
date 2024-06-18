@@ -187,12 +187,13 @@
 .home-page-text h1{
     border-top: 1px solid rgb(9, 199, 199);
     padding: 15px;
+    font-size: 250%;
     border-bottom: 1px solid rgb(9, 199, 199);
 }
 
 .home-page-text p{
     margin-top: 15px;
-    font-size: 125%;
+    font-size: 135%;
 }
 
 .home-page-text .contact-us-button{
