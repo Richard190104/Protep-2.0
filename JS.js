@@ -44,3 +44,34 @@ function toggleChoice(button){
     }
     
 }
+
+let currentIndex = 0;
+
+function slideLeft() {
+    const slider = document.getElementById('picture-slider');
+
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = 3 - 1; // Loop to the last image
+    }
+    updateSlider();
+}
+
+function slideRight() {
+    const slider = document.getElementById('picture-slider');
+    if (currentIndex < 3 - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Loop to the first image
+    }
+    updateSlider();
+}
+
+function updateSlider() {
+   
+    const slider = document.getElementById('picture-slider');
+    const newTransform = `translateX(${-currentIndex * 100}%)`;
+    slider.style.transition = 'transform 0.5s ease'; 
+    slider.style.transform = newTransform;
+}
