@@ -165,7 +165,7 @@
 }
 }
 @keyframes slideIn {
-    from { transform: translate(0%, -50%); } /* Start from top */
+    from { transform: translate(0%, -100%); } /* Start from top */
     to { transform: translate(0%, 0%); }
   }
   
