@@ -16,11 +16,11 @@
         <p style="font-size: 150%;"> <b style="color: white;">Pro</b>Tep</b> </p>
        <div>
     <ul>
-        <div class="underline"><li> <a href="">DOMOV</a></li></div>
-        <div class="underline"><li> <a href="">O NÁS</a></li></div>
-        <div class="underline"><li> <a href="">SLUŽBY</a></li></div>
-        <div class="underline"><li> <a href="">NAŠA PRÁCA</a></li></div>
-        <div class="underline"><li> <a href="">KONTAKT</a></li></div>
+        <div class="underline"><li> <a href="#home">DOMOV</a></li></div>
+        <div class="underline"><li> <a href="#aboutus">O NÁS</a></li></div>
+        <div class="underline"><li> <a href="#services">SLUŽBY</a></li></div>
+        <div class="underline"><li> <a href="#prices">CENNÍK</a></li></div>
+        <div class="underline"><li> <a href="#contactus">KONTAKT</a></li></div>
         
 
     </ul>
@@ -39,29 +39,33 @@
 
     </nav>
     <ul id="slide-bar">
-        <div class="underline btn"><li> <a href="">DOMOV</a></li></div>
-        <div class="underline btn"><li> <a href="">O NÁS</a></li></div>
-        <div class="underline btn"><li> <a href="">SLUŽBY</a></li></div>
-        <div class="underline btn"><li> <a href="">NAŠA PRÁCA</a></li></div>
-        <div class="underline btn"><li> <a href="">KONTAKT</a></li></div>
+        <div class="underline btn"><li> <a href="#home">DOMOV</a></li></div>
+        <div class="underline btn"><li> <a href="#aboutus">O NÁS</a></li></div>
+        <div class="underline btn"><li> <a href="#services">SLUŽBY</a></li></div>
+        <div class="underline btn"><li> <a href="#prices">CENNÍK</a></li></div>
+        <div class="underline btn"><li> <a href="#contactus">KONTAKT</a></li></div>
         
 
     </ul>
-    <div class="home-page-text" id="home-page-text">
+    <section id="home"></section>
+
+    <div class="home-page-text load" id="home-page-text">
         <h1 style="text-transform: uppercase;">Vitajte na stránke PRO<b style="color: rgb(9, 199, 199);">TEP</b></h1>
         <p>Punúkame Vám profesionálne tepovacie a upratovacie služby za bezkonkurenčné ceny!</p>
         <h3 class="contact-us-button underline">Kontaktujte nás</h3>
     </div>
 </div>
+<section id="aboutus"></section>
+
 <div style="justify-content: center; display: flex; align-items: center;">
-<div class="aboutus-main-container">
-    <div class="aboutus-container left">
+<div class="aboutus-main-container ">
+    <div class="aboutus-container left ">
         <img style="box-shadow: 0px 5px 15px rgb(121, 117, 117); border-radius: 5px; max-width: 70%;" src="images/cleaning.jpg" alt="">
         <img class="image2" src="images/cleaning.jpg" alt="">
     </div>
-    <div class="aboutus-container right">
-        <h1 style="border-bottom: 3px solid rgba(9, 199, 199, 0.377); color: rgb(90, 88, 88);">Niečo o nás</h1>
-        <p style="padding: 5px; justify-content: center; display: flex; color: rgb(90, 88, 88); font-size: 120%;">
+    <div class="aboutus-container right ">
+        <h1 style="border-bottom: 3px solid rgb(9, 199, 199); color: rgb(0, 0, 0);">Niečo o nás</h1>
+        <p style="padding: 5px; justify-content: center; display: flex; color: rgb(0, 0, 0); font-size: 120%;">
             Máte na vašom koberci či nábytku škvrnu, s ktorou si neviete rady? <br> 
             Alebo jednoducho stratili svoj pôvodný lesk a sviežosť?<br>
             Tak využite naše služby a budete spokojní! <br>
@@ -73,6 +77,7 @@
     </div>
 </div>
 </div>
+<section id="services"></section>
 
 <div class="services-main-container">
     <h1 style=" margin-bottom: 50px; margin-top: 15px;">Služby</h1>
@@ -80,7 +85,7 @@
        
           
         <div style="justify-content: center; display: flex; flex-direction: row; align-items: center; max-width: 1920px;">
-      <div class="services-content">
+      <div class="services-content ">
         
         <div class=" services-content-box">
           <div class="image-container"><img src="images/carpets.jpg" class="services-image"> </div>
@@ -144,14 +149,15 @@
  
 
 
-
+  
+<section id="prices"></section>
 
 <div id="here" style="width: 100%; justify-content: center; align-items: center; display: flex;">
-    <div class="prices-section load" >
+    <div class="prices-section " >
       <h1 style="border-bottom: 3px solid rgb(9, 199, 199); margin-bottom: 30px; font-weight: bolder; color: rgb(255, 255, 255);">Cenník</h1>
      
       
-      <div class="tepovanie-section">
+      <div class="tepovanie-section ">
         
         <div style=" justify-content: center; align-items: center; display: flex;"> 
             <p style="font-size: 180%; color: rgb(255, 255, 255);">Cenník služieb - <br><b style="color: rgb(9, 199, 199);">Tepovanie</b></p>
@@ -228,7 +234,7 @@
 
 
       
-      <div class="tepovanie-section">
+      <div class="tepovanie-section ">
         <div style=" justify-content: center; align-items: center; display: flex;"> 
             <p style="font-size: 180%; color: rgb(255, 255, 255);">Cenník služieb - <br><b style="color: rgb(9, 199, 199)">Upratovanie</b></p>
         </div>
@@ -269,27 +275,41 @@
     </div>
   </div>
 
-<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
-  <div class="our-work-container">
-    <div style="flex-direction: column; align-items: center; justify-content: center; display: flex; background-image: url('images/services-background.jpg'); width: 100%;">
-       <h1 style="margin-top:20px ; height: 50px;  border-bottom: 3px solid rgb(9, 199, 199); margin-bottom: 30px; font-weight: bolder; color: rgb(255, 255, 255);">Naša práca</h1>
-
-       <div class="picture-slider-container">
-        <p class="slider-button" onclick="slideLeft()">L</p>
-        <div class="picture-slider" >
-            <div id="picture-slider" style="display: flex; flex-direction: row; width: 100%; position: relative; ">
-            <img class="picture" src="images/our-work-image1.jpg" alt="Image 1">
-            <img class="picture" src="images/our-work-image1.jpg" alt="Image 2">
-            <img class="picture" src="images/our-work-image1.jpg" alt="Image 3">
-            </div>
-        </div>
-        <p class="slider-button" onclick="slideRight()">R</p>
-    </div>
-
-    </div>
-
-  </div>
+<div class="show-work">
+    <p>Ukážku našej práce si môžete pozriet na našom facebooku alebo instagrame :</p>
 </div>
+
+<div style=" padding: 20px 0px ; width: 100%; background-color: rgb(29, 28, 28); display: flex; justify-content: center;">
+    <h1 style=" border-bottom: 3px solid rgb(9, 199, 199); font-weight: bolder; color: rgb(255, 255, 255);">Kontakt</h1>
+
+</div>
+
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10466.694026161374!2d21.21303093950349!3d49.01679614867751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ef2b8c846e301%3A0x695afa60f44f0b5a!2sMirka%20Ne%C5%A1pora%2C%20080%2001%20Pre%C5%A1ov!5e0!3m2!1ssk!2ssk!4v1719165291217!5m2!1ssk!2ssk" width="100%" height="600px " style="border:0;" allowfullscreen="" loading="none" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<section id="contactus"></section>
+<div class="contact-container">
+        <div class="form-section">
+            <h2 style="color: rgb(175, 175, 175);">Napíšte nám</h2>
+            <form action="https://formspree.io/f/moqggnlo" method="post">
+                <input name="Meno a priezvisko" type="text" placeholder="Meno a priezvisko" required>
+                <input name="Email" type="email" placeholder="Email@email.sk" required>
+                <input name="tel. číslo" type="tel" placeholder="+421 123 456 789" required>
+                <textarea id="requests" name="správa" placeholder="Sem zadajte správu." required></textarea>
+                <button type="submit">ODOSLAŤ</button>
+            </form>
+        </div>
+        <div class="info-section">
+            <h2>Kontaktné info</h2>
+            <p><strong style="color: rgb(9, 199, 199);">Facebook:</strong> <a href="https://fb.com" target="_blank">fb.com</a></p>
+            <p><strong style="color: rgb(9, 199, 199);">Pôsobime:</strong> Prešov + okolie</p>
+            <p><strong style="color: rgb(9, 199, 199);">Mobil:</strong> 0900 000 000</p>
+            <p><strong style="color: rgb(9, 199, 199);">Email:</strong> <a href="">pato@gmail.com</a></p>
+            <p><strong style="color: rgb(9, 199, 199);">Otvorení:</strong> NON-STOP</p>
+        </div>
+
+</div>
+
 </body>
 
 </html>
