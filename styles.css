@@ -216,6 +216,7 @@
 }
 .aboutus-main-container{
     flex-direction: column;
+   
 }
 }
 @keyframes slideIn {
@@ -300,14 +301,15 @@
 }
 
 .aboutus-main-container{
-    margin-top: 15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: row;
     max-width: 1920px;
-    background-color: rgba(255, 255, 255, 0.842);;
-     
+    
+    
 }
 
 .aboutus-container.left{
@@ -319,13 +321,69 @@
     justify-content: center;
     align-items: center;
     position: relative; 
-    
     z-index: 5;
+    border-top: 5px solid rgb(9, 199, 199);
+    border-radius: 25px;
 }
 
+.aboutus-container.left:hover{
+    animation: border-resize 0.5s forwards;
+}
+
+@keyframes border-resize {
+    from{
+        width: 40%;
+    }
+    to{
+        width: 50%;
+    }
+}
+
+.aboutus-container.left:not(:hover){
+    animation: border-resize-not 0.5s forwards;
+}
+
+@keyframes border-resize-not{
+    from{
+        width: 50%;
+    }
+    to{
+        width: 40%;
+    }
+}
+
+
+
+.aboutus-container.right:hover{
+    animation: border-resize2 0.5s forwards;
+}
+
+@keyframes border-resize2 {
+    from{
+        width: 40%;
+    }
+    to{
+        width: 50%;
+    }
+}
+
+.aboutus-container.right:not(:hover){
+    animation: border-resize2-not 0.5s forwards;
+}
+
+@keyframes border-resize2-not {
+    from{
+        width: 50%;
+    }
+    to{
+        width: 40%;
+    }
+}
+
+
+
 .aboutus-container.right{
-    padding: 50px;
-    box-shadow: 0px 10px 10px 0px rgb(121, 119, 119);
+    padding: 50px; 
     border-radius: 25px;
     left: -15px;
     width: 30%;
@@ -335,7 +393,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    border-bottom: 3px solid rgb(9, 199, 199);
+    border-bottom: 5px solid rgb(9, 199, 199);
     
     
 }
@@ -370,11 +428,52 @@
     color: black;
    
 
+
+    
 }
 .image2{
     bottom: -50px;
     right: 15px;
 }
+.aboutus-container.right:not(:hover){
+    animation: border-resize2-not 0.5s forwards;
+}
+
+.aboutus-container.left:hover{
+    animation: border-resize 0.5s forwards;
+}
+
+@keyframes border-resize {
+ 
+}
+
+.aboutus-container.left:not(:hover){
+    animation: border-resize-not 0.5s forwards;
+}
+
+@keyframes border-resize-not{
+ 
+}
+
+
+
+.aboutus-container.right:hover{
+    animation: border-resize2 0.5s forwards;
+}
+
+@keyframes border-resize2 {
+ 
+}
+
+.aboutus-container.right:not(:hover){
+    animation: border-resize2-not 0.5s forwards;
+}
+
+@keyframes border-resize2-not {
+   
+}
+
+
 }
 
 .services-main-container{
@@ -759,5 +858,4 @@
     opacity: 1;
     transform: translateY(0);
 }
-
 
