@@ -464,7 +464,7 @@
 
   
 .prices-section{
-    padding: 50px;
+    padding: 20px;
     
     display: flex;
     flex-direction: column;
@@ -474,7 +474,7 @@
     height: calc(100% - 80px);
     width: 100%;
     position: relative;
-  
+    max-width: 100%;
     background-color: rgb(34, 34, 34);
     
   }
@@ -489,7 +489,7 @@
     border-radius: 25px;
     border-bottom: 3px solid rgba(9, 199, 199, 0.363);
     margin-top: 50px;
-    padding: 30px;
+    padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
@@ -715,4 +715,5 @@
     opacity: 1;
     transform: translateY(0);
 }
+
 
