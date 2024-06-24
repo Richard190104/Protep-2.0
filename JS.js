@@ -5,7 +5,6 @@ function toggleMenu() {
     var slideBar = document.getElementById('slide-bar');
     slideBar.classList.toggle('active');
     var homepage = document.getElementById('home-page-text');
-    homepage.classList.toggle('moveUp');
     if (slideBar.classList.contains('active')) {
         slideBar.style.animation = 'slideIn 1s forwards';
     } else {
@@ -75,3 +74,34 @@ function updateSlider() {
     slider.style.transition = 'transform 0.5s ease'; 
     slider.style.transform = newTransform;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.load');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+               
+            }
+            else{
+                entry.target.classList.remove('show');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    items.forEach(item => {
+        observer.observe(item);
+    });
+});
+
+
+
