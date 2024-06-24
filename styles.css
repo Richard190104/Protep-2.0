@@ -335,7 +335,7 @@
         width: 40%;
     }
     to{
-        width: 50%;
+        width: 42%;
     }
 }
 
@@ -345,7 +345,7 @@
 
 @keyframes border-resize-not{
     from{
-        width: 50%;
+        width: 42%;
     }
     to{
         width: 40%;
@@ -363,7 +363,7 @@
         width: 40%;
     }
     to{
-        width: 50%;
+        width: 42%;
     }
 }
 
@@ -373,7 +373,7 @@
 
 @keyframes border-resize2-not {
     from{
-        width: 50%;
+        width: 42%;
     }
     to{
         width: 40%;
