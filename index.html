@@ -16,11 +16,11 @@
         <p style="font-size: 150%;"> <b style="color: white;">Pro</b>Tep</b> </p>
        <div>
     <ul>
-        <div class="underline"><li> <a href="#home">DOMOV</a></li></div>
-        <div class="underline"><li> <a href="#aboutus">O NÁS</a></li></div>
-        <div class="underline"><li> <a href="#services">SLUŽBY</a></li></div>
+        <div class="underline"><li> <a  href="#home">DOMOV</a></li></div>
+        <div class="underline"><li> <a  href="#aboutus">O NÁS</a></li></div>
+        <div class="underline"><li> <a  href="#services">SLUŽBY</a></li></div>
         <div class="underline"><li> <a href="#prices">CENNÍK</a></li></div>
-        <div class="underline"><li> <a href="#contactus">KONTAKT</a></li></div>
+        <div class="underline"><li> <a  href="#contactus">KONTAKT</a></li></div>
         
 
     </ul>
@@ -38,6 +38,7 @@
     </div>
 
     </nav>
+    <nav style="width: 100%;">
     <div style="overflow: hidden; width: 100%; justify-content: center; display: flex;">
     <ul id="slide-bar">
         <div class="underline btn"><li> <a href="#home">DOMOV</a></li></div>
@@ -49,25 +50,26 @@
 
     </ul>
 </div>
+</nav>
     <section id="home"></section>
 
     <div class="home-page-text load" id="home-page-text">
         <h1 style="text-transform: uppercase;">Vitajte na stránke PRO<b style="color: rgb(9, 199, 199);">TEP</b></h1>
         <p>Punúkame Vám profesionálne tepovacie a upratovacie služby za bezkonkurenčné ceny!</p>
-        <h3 class="contact-us-button underline">Kontaktujte nás</h3>
+        <h3 class="contact-us-button underline"><a style="text-decoration: none; color: white;" href="#contactus">Kontaktujte nás</a></h3>
     </div>
 </div>
 <section id="aboutus"></section>
 
 <div style="justify-content: center; display: flex; align-items: center;">
 <div class="aboutus-main-container ">
-    <div class="aboutus-container left ">
+    <div class="aboutus-container left load">
         <img style="box-shadow: 0px 5px 15px rgb(121, 117, 117); border-radius: 5px; max-width: 70%;" src="images/cleaning.jpg" alt="">
         <img class="image2" src="images/cleaning.jpg" alt="">
     </div>
     <div class="aboutus-container right ">
-        <h1 style="border-bottom: 3px solid rgb(9, 199, 199); color: rgb(0, 0, 0);">Niečo o nás</h1>
-        <p style="padding: 5px; justify-content: center; display: flex; color: rgb(0, 0, 0); font-size: 120%;">
+        <h1 class="load" style="border-bottom: 3px solid rgb(9, 199, 199); color: rgb(0, 0, 0);">Niečo o nás</h1>
+        <p class="load" style="padding: 5px; justify-content: center; display: flex; color: rgb(0, 0, 0); font-size: 120%;">
             Máte na vašom koberci či nábytku škvrnu, s ktorou si neviete rady? <br> 
             Alebo jednoducho stratili svoj pôvodný lesk a sviežosť?<br>
             Tak využite naše služby a budete spokojní! <br>
@@ -159,38 +161,38 @@
       <h1 style="border-bottom: 3px solid rgb(9, 199, 199); margin-bottom: 30px; font-weight: bolder; color: rgb(255, 255, 255);">Cenník</h1>
      
       
-      <div class="tepovanie-section ">
+      <div class="tepovanie-section">
         
         <div style=" justify-content: center; align-items: center; display: flex;"> 
             <p style="font-size: 180%; color: rgb(255, 255, 255);">Cenník služieb - <br><b style="color: rgb(9, 199, 199);">Tepovanie</b></p>
         </div>
-        <div style="display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center; min-width: 30%;">
+        <div style="  display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center; min-width: 30%;">
           <div class="item m2" onclick="toggleChoice(this)" id="Tepovanie metrážnych kobercov"> 
             <p>Tepovanie metrážnych kobercov</p>
             <p>Od 2,5€/m2</p>
 
           </div>
-          <div class="item m2" onclick="toggleChoice(this)" id="Tepovanie kusových kobercov"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie kusových kobercov"> 
             <p id="this">Tepovanie kusových kobercov	</p>
             <p>Od 3€/m2</p>
 
           </div>
-          <div class="item ms" onclick="toggleChoice(this)" id="Tepovanie sedačiek"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie sedačiek"> 
             <p id="this">Tepovanie sedačiek</p>
             <p>	Od 10€/miesto sedenia</p>
 
           </div>
-          <div class="item ks" onclick="toggleChoice(this)" id="Tepovanie kresiel"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie kresiel"> 
             <p id="this">Tepovanie kresiel</p>
             <p>	Od 15€</p>
 
           </div>
-          <div class="item ks" onclick="toggleChoice(this)" id="Tepovanie vankúšov"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie vankúšov"> 
             <p>Tepovanie vankúšov</p>
             <p>		Od 3€/ks</p>
 
           </div>
-          <div class="item sl" onclick="toggleChoice(this)" id="Tepovanie matracov"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie matracov"> 
             <p>Tepovanie matracov (1 lôžko, 1strana)</p>
             <p>	Od 10€</p>
 
@@ -199,32 +201,32 @@
 
 
         <div  style=" min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center;">
-          <div class="item ks" onclick="toggleChoice(this)" id="Tepovanie taburetiek"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie taburetiek"> 
             <p>Tepovanie taburetiek	</p>
             <p>Od 5€/ks</p>
 
           </div>
-          <div class="item ks" onclick="toggleChoice(this)" id="Tepovanie stoličiek"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie stoličiek"> 
             <p>Tepovanie stoličiek</p>
             <p> 	Od 4€/ks</p>
 
           </div>
-          <div class="item ks" onclick="toggleChoice(this)" id="Tepovanie čalúnenia postelí"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie čalúnenia postelí"> 
             <p>Tepovanie čalúnenia postelí</p>
             <p>	Od 15€</p>
 
           </div>
-          <div class="item ks" onclick="toggleChoice(this)" id="Tepovanie manželských postelí"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie manželských postelí"> 
             <p>Tepovanie manželských postelí	</p>
             <p>Od 25€</p>
 
           </div>
-          <div class="item ks" onclick="toggleChoice(this)" id="Tepovanie rohovej lavice"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie rohovej lavice"> 
             <p>Tepovanie rohovej lavice</p>
             <p>	Od 15€</p>
 
           </div>
-          <div class="item ks" onclick="toggleChoice(this)" id="Impregnácia"> 
+          <div class="item load" onclick="toggleChoice(this)" id="Impregnácia"> 
             <p>Impregnácia	</p>
             <p>	Od 3€/miesto sedenia</p>
 
@@ -241,11 +243,11 @@
             <p style="font-size: 180%; color: rgb(255, 255, 255);">Cenník služieb - <br><b style="color: rgb(9, 199, 199)">Upratovanie</b></p>
         </div>
         <div style="min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center;">
-          <div class="item" onclick="toggleChoice(this)"> 
+          <div class="item load" onclick="toggleChoice(this)"> 
             <p>Tepovanie metrážnych kobercov</p>
             <p>Od 2,5€/m2</p>
           </div>
-          <div class="item" onclick="toggleChoice(this)"> 
+          <div class="item load" onclick="toggleChoice(this)"> 
             <p>Tepovanie kusových kobercov	</p>
             <p>Od 3€/m2</p>
           </div>
@@ -253,12 +255,12 @@
         </div>
 
 
-        <div  style=" min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center;">
-          <div class="item" onclick="toggleChoice(this)"> 
+        <div  style=" min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center; ">
+          <div class="item load" onclick="toggleChoice(this)"> 
             <p>Tepovanie taburetiek	</p>
             <p>Od 5€/ks</p>
           </div>
-          <div class="item" onclick="toggleChoice(this)"> 
+          <div class="item load" onclick="toggleChoice(this)"> 
             <p>Tepovanie stoličiek</p>
             <p> 	Od 4€/ks</p>
           </div>
@@ -278,7 +280,10 @@
   </div>
 
 <div class="show-work">
-    <p>Ukážku našej práce si môžete pozriet na našom facebooku alebo instagrame :</p>
+    <div style="z-index: 1; max-width: 1920px; background: linear-gradient(to right, #1bc6c9,  #0485cf5d);  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; border-radius: 15px; display: flex; flex-direction: row; justify-content: center; align-items: center; border-bottom: 3px solid white;">
+    <p>Ukážku našej práce nájdete tu:</p>
+    <p id="our-work-button" > Ukážka práce </p>
+    </div>
 </div>
 
 <div style=" padding: 20px 0px ; width: 100%; background-color: rgb(29, 28, 28); display: flex; justify-content: center;">
