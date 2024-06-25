@@ -1,330 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProTEP</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="JS.js"></script>
+function toggleMenu() {
 
-</head>
+    var button = document.getElementById('menu-btn');
+    button.classList.toggle('open');
+    var slideBar = document.getElementById('slide-bar');
+    slideBar.classList.toggle('active');
+    if (slideBar.classList.contains('active')) {
+        slideBar.style.animation = 'slideIn 1s forwards';
+    } else {
+        slideBar.style.animation = 'slideOut 1s forwards';
+    }
 
-<body>
-
-    <div class="loading-screen">
-        <p style="font-size: 150%;"> <b style="color: rgb(5, 213, 228);">Pro</b>Tep</b> </p>
-        <div class="loader">
-
-        </div>
-    </div>
-    <section id="home"></section>
-    <div class="home-page-container">
-    <nav class="navbar">
-        <div class="navbar-container">
-        <p style="font-size: 150%;"> <b style="color: white;">Pro</b>Tep</b> </p>
-       <div>
-    <ul>
-        <div class="underline"><li> <a  href="#home">DOMOV</a></li></div>
-        <div class="underline"><li> <a  href="#aboutus">O NÁS</a></li></div>
-        <div class="underline"><li> <a  href="#services">SLUŽBY</a></li></div>
-        <div class="underline"><li> <a href="#prices">CENNÍK</a></li></div>
-        <div class="underline"><li> <a  href="#contactus">KONTAKT</a></li></div>
-        
-
-    </ul>
-
-   
-    <div class="menu-opener">
-        <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
-            <div class="menu-btn-line line-1"></div>
-            <div class="menu-btn-line line-2"></div>
-            <div class="menu-btn-line line-3"></div>
-            
-          </div>
-        </div>
-       </div>
-    </div>
-
-    </nav>
-    <nav style="width: 100%;">
-    <div style="overflow: hidden; width: 100%; justify-content: center; display: flex;">
-    <ul id="slide-bar">
-        <div class="underline btn"><li> <a href="#home">DOMOV</a></li></div>
-        <div class="underline btn"><li> <a href="#aboutus">O NÁS</a></li></div>
-        <div class="underline btn"><li> <a href="#services">SLUŽBY</a></li></div>
-        <div class="underline btn"><li> <a href="#prices">CENNÍK</a></li></div>
-        <div class="underline btn"><li> <a href="#contactus">KONTAKT</a></li></div>
-        
-
-    </ul>
-</div>
-</nav>
     
+}
 
-    <div class="home-page-text load" id="home-page-text">
-        <h1 style="text-transform: uppercase;">Vitajte na stránke PRO<b style="color: rgb(9, 199, 199);">TEP</b></h1>
-        <p>Punúkame Vám profesionálne tepovacie a upratovacie služby za bezkonkurenčné ceny!</p>
-        <h3 class="contact-us-button underline"><a style="text-decoration: none; color: white;" href="#contactus">Kontaktujte nás</a></h3>
-    </div>
-</div>
-<section id="aboutus"></section>
+function copyrequests(){
+    const parent = document.getElementById('here');
+    const textarea = document.getElementById('requests');
+    const chosen = parent.querySelectorAll('.active');
+    textarea.value = 'Mám záujem o tieto služby:'
+    chosen.forEach(element => {
+        textarea.value +=  '\n' + element.id;
+    });
+    
+}
 
-<div style="justify-content: center; display: flex; align-items: center;">
-<div class="aboutus-main-container load"  id="aboutus-main-container">
-    <div class="aboutus-container left load">
-        <img style="box-shadow: 0px 5px 15px rgb(121, 117, 117); border-radius: 5px; max-width: 70%;" src="images/cleaning.jpg" alt="">
-        <img class="image2" src="images/cleaning.jpg" alt="">
-    </div>
-    <div class="aboutus-container right ">
-        <h1 class="load" style="border-bottom: 3px solid rgb(9, 199, 199); color: rgb(80, 78, 78);">Niečo o nás</h1>
-        <p class="load" style="padding: 5px; justify-content: center; display: flex; color: rgb(121, 117, 117); font-size: 120%;">
-            Máte na vašom koberci či nábytku škvrnu, s ktorou si neviete rady? <br> 
-            Alebo jednoducho stratili svoj pôvodný lesk a sviežosť?<br>
-            Tak využite naše služby a budete spokojní! <br>
-            Naša misia je jednoduchá: poskytovať služby, 
-            ktoré prekračujú očakávania našich zákazníkov. 
-            Používame najmodernejšie technológie a ekologicky šetrné čistiace 
-            prostriedky. Veríme, že čistota by nemala byť dosiahnutá na úkor
-             zdravia našich zákazníkov ani životného prostredia.</p>
-    </div>
-</div>
-</div>
-<section id="services"></section>
 
-<div class="services-main-container">
-    <h1 style=" margin-bottom: 50px; margin-top: 15px;">Služby</h1>
-    <div class=" about-us-section load" style="flex-direction: column;">
-       
-          
-        <div style="justify-content: center; display: flex; flex-direction: row; align-items: center; max-width: 1920px;">
-      <div class="services-content ">
+function toggleChoice(button){
+    button.classList.toggle('active');
+    const contact = document.getElementById('c-button');
+
+    const elements = document.querySelectorAll('.active');
+    if(elements.length === 0){
+        contact.classList.remove('show');
+        const textarea = document.getElementById('requests');
+        textarea.value = '';
+
+    }
+    else{
         
-        <div class=" services-content-box">
-          <div class="image-container"><img src="images/carpets.jpg" class="services-image"> </div>
-          <p class="services-text-p headline"> Tepovanie kobercov</p>
-          <p class="services-text-p">Hĺbkove čistenie kusových a metrážnych kobercov - či už u vás alebo v našich priestoroch. <br><br> My koberec vyzdvihneme, vyčistíme a dovezieme!
-            </p>
-          </div>
-        
-          <div class="services-content-box">
-            <div class="image-container"><img src="images/furniture.jpg" class="services-image"> </div>
-            <p class="services-text-p headline">Tepovanie čalúnenia</p>
-            <p class="services-text-p">
-              Naša služba profesionálneho tepovania čalúneného nábytku prináša vášmu nábytku novú sviežosť a čistotu. 
-              <br>Využívame ekologické čistiace prostriedky a pokročilé technológie na efektívne 
-              odstránenie škvŕn, prachu a alergénov.
-            </p>   
-          </div>
-         
-          <div class=" services-content-box">
-            <div class="image-container"><img src="images/matraces.jpeg" class="services-image"> </div>
-            <p class="services-text-p headline"> Tepovanie matracov</p>
-            <p class="services-text-p">
-              ahoj ja som paťik
-              </p>
-            </div>
+        contact.classList.add('show');
+    }
+    
+}
 
-        </div> 
-      </div>
+let currentIndex = 0;
 
-      <div style="justify-content: center; display: flex; flex-direction: row; align-items: center; max-width: 1920px;">
-        <div class="services-content">
-          
-          <div class=" services-content-box">
-            <div class="image-container"><img src="images/car.jpg" class="services-image"> </div>
-            <p class="services-text-p headline"> Tepovanie auta</p>
-            <p class="services-text-p">Kompletné tepovanie a čistenie interiéru Vášho auta.
-              </p>
-            </div>
-          
-            <div class="services-content-box">
-              <div class="image-container"><img src="images/windows.jpg" class="services-image"> </div>
-              <p class="services-text-p headline">Umývanie okien</p>
-              <p class="services-text-p">
-                Umývanie okien, výkladov, okenných sieťok.
-              </p>   
-            </div>
-           
-            <div class="services-content-box">
-              <div class="image-container"><img src="images/household.jpg" class="services-image"> </div>
-              <p class="services-text-p headline">Upratovanie domácností</p>
-              <p class="services-text-p">
-                Ponúkame pravidelné upratovanie v požadovanom intervale, jednorázové upratovanie len ako výpomoc, tak aj generálne upratovanie napríklad po maľovaní či rekonštrukcií a podobne.
-              </p>   
-            </div>
+function slideLeft() {
+    const slider = document.getElementById('picture-slider');
 
-          </div> 
-        </div>
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = 3 - 1; // Loop to the last image
+    }
+    updateSlider();
+}
 
-    </div>
-</div>
- 
+function slideRight() {
+    const slider = document.getElementById('picture-slider');
+    if (currentIndex < 3 - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Loop to the first image
+    }
+    updateSlider();
+}
+
+function updateSlider() {
+   
+    const slider = document.getElementById('picture-slider');
+    const newTransform = `translateX(${-currentIndex * 100}%)`;
+    slider.style.transition = 'transform 0.5s ease'; 
+    slider.style.transform = newTransform;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.load');
+    const aboutus_section = document.querySelector('.prices-section');
+    const tepocanie_section = document.querySelectorAll('.tepovanie-section');
+    var button = document.getElementById('menu-btn');
+    var slideBar = document.getElementById('slide-bar');
+    const navbar = document.querySelector('.navbar');
+    const home_page = document.querySelector('.home-page-container');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.001
+    };
+
+    const observerCallback = (entries, observer) => {
 
 
-  
-<section id="prices"></section>
 
-<div id="here" style="width: 100%; justify-content: center; align-items: center; display: flex;">
-    <div class="prices-section " id="prices-section">
-      <h1 style="border-bottom: 3px solid rgb(9, 199, 199); margin-bottom: 30px; font-weight: bolder; color: rgb(255, 255, 255);">Cenník</h1>
-     
-      
-      <div class="tepovanie-section">
-        
-        <div style=" justify-content: center; align-items: center; display: flex;"> 
-            <p style="font-size: 180%; color: rgb(255, 255, 255);">Cenník služieb - <br><b style="color: rgb(9, 199, 199);">Tepovanie</b></p>
-        </div>
-        <div style="  display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center; min-width: 30%;">
-          <div class="item m2" onclick="toggleChoice(this)" id="Tepovanie metrážnych kobercov"> 
-            <p>Tepovanie metrážnych kobercov</p>
-            <p>Od 2,5€/m2</p>
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
 
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie kusových kobercov"> 
-            <p id="this">Tepovanie kusových kobercov	</p>
-            <p>Od 3€/m2</p>
+                if (entry.target === aboutus_section) {
+                    tepocanie_section.forEach(tsection =>{
+                        tsection.classList.add('slide-from-right');
+                    }); 
+                }
+                if (entry.target === home_page) {
+                    navbar.classList.remove('background');
+                    navbar.classList.add('transparent');
+                    slideBar.classList.remove('slide-bar-background');
+                    if (slideBar.classList.contains('active') ) {
+                        slideBar.style.animation = 'slideOut 0.1s forwards';
+                        button.classList.remove('open');
+                        slideBar.classList.remove('active');
+                    }
+                    
+                    
+                    
+                }
+               
+                }
+             else {
+                entry.target.classList.remove('show');
+                if (entry.target === aboutus_section) {
+                  
+                    tepocanie_section.forEach(tsection =>{
+                        tsection.classList.remove('slide-from-right');
+                    });               
+                 }
 
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie sedačiek"> 
-            <p id="this">Tepovanie sedačiek</p>
-            <p>	Od 10€/miesto sedenia</p>
+                 if (entry.target === home_page){
+                    navbar.classList.add('background');
+                    navbar.classList.remove('transparent');
+                    slideBar.classList.add('slide-bar-background');
+                    if (slideBar.classList.contains('active')) {
+                        slideBar.style.animation = 'slideOut 0.1s forwards';
+                        button.classList.remove('open');
+                        slideBar.classList.remove('active');
+                    }
+             
 
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie kresiel"> 
-            <p id="this">Tepovanie kresiel</p>
-            <p>	Od 15€</p>
+                }
+            }
+        });
+    };
 
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie vankúšov"> 
-            <p>Tepovanie vankúšov</p>
-            <p>		Od 3€/ks</p>
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie matracov"> 
-            <p>Tepovanie matracov (1 lôžko, 1strana)</p>
-            <p>	Od 10€</p>
-
-          </div>
-        </div>
-
-
-        <div  style=" min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center;">
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie taburetiek"> 
-            <p>Tepovanie taburetiek	</p>
-            <p>Od 5€/ks</p>
-
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie stoličiek"> 
-            <p>Tepovanie stoličiek</p>
-            <p> 	Od 4€/ks</p>
-
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie čalúnenia postelí"> 
-            <p>Tepovanie čalúnenia postelí</p>
-            <p>	Od 15€</p>
-
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie manželských postelí"> 
-            <p>Tepovanie manželských postelí	</p>
-            <p>Od 25€</p>
-
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie rohovej lavice"> 
-            <p>Tepovanie rohovej lavice</p>
-            <p>	Od 15€</p>
-
-          </div>
-          <div class="item load" onclick="toggleChoice(this)" id="Impregnácia"> 
-            <p>Impregnácia	</p>
-            <p>	Od 3€/miesto sedenia</p>
-
-          </div>
-        
-        </div>
-      
-    </div>
+    items.forEach(item => {
+        observer.observe(item);
+    });
+    observer.observe(aboutus_section);
+    observer.observe(home_page);
+});
 
 
-      
-      <div class="tepovanie-section ">
-        <div style=" justify-content: center; align-items: center; display: flex;"> 
-            <p style="font-size: 180%; color: rgb(255, 255, 255);">Cenník služieb - <br><b style="color: rgb(9, 199, 199)">Upratovanie</b></p>
-        </div>
-        <div style="min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center;">
-          <div class="item load" onclick="toggleChoice(this)"> 
-            <p>Tepovanie metrážnych kobercov</p>
-            <p>Od 2,5€/m2</p>
-          </div>
-          <div class="item load" onclick="toggleChoice(this)"> 
-            <p>Tepovanie kusových kobercov	</p>
-            <p>Od 3€/m2</p>
-          </div>
-
-        </div>
-
-
-        <div  style=" min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center; ">
-          <div class="item load" onclick="toggleChoice(this)"> 
-            <p>Tepovanie taburetiek	</p>
-            <p>Od 5€/ks</p>
-          </div>
-          <div class="item load" onclick="toggleChoice(this)"> 
-            <p>Tepovanie stoličiek</p>
-            <p> 	Od 4€/ks</p>
-          </div>
-
-        
-        </div>
-
-    </div>
-    <p style="color: rgb(179, 178, 178); font-size: 115%;"> <b>Minimálna cena objednávky: 30€ </b><br>
-      Ceny sú stanovené za bežné znečistenie. Konečná cena sa odvíja od miery znečistenia a veľkosti nábytku. 
-     <br> <b>Konečnú cenu oznamujeme vopred!</b>
-      </p>
-      <a href="#contactus" id="c-button" onclick="copyrequests()">Kontaktujte nás</a>
-
-
-    </div>
-  </div>
-
-<div class="show-work">
-    <div style="z-index: 1; max-width: 1920px; background: linear-gradient(to right, #1bc6c9,  #0485cf5d);  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; border-radius: 15px; display: flex; flex-direction: row; justify-content: center; align-items: center; border-bottom: 3px solid white;">
-    <p>Ukážku našej práce nájdete tu:</p>
-    <p id="our-work-button" > Ukážka práce </p>
-    </div>
-</div>
-
-<div style=" padding: 20px 0px ; width: 100%; background-color: rgb(29, 28, 28); display: flex; justify-content: center;">
-    <h1 style=" border-bottom: 3px solid rgb(9, 199, 199); font-weight: bolder; color: rgb(255, 255, 255);">Kontakt</h1>
-
-</div>
-
-
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10466.694026161374!2d21.21303093950349!3d49.01679614867751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ef2b8c846e301%3A0x695afa60f44f0b5a!2sMirka%20Ne%C5%A1pora%2C%20080%2001%20Pre%C5%A1ov!5e0!3m2!1ssk!2ssk!4v1719165291217!5m2!1ssk!2ssk" width="100%" height="600px " style="border:0;" allowfullscreen="" loading="none" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-<section id="contactus"></section>
-<div class="contact-container">
-        <div class="form-section">
-            <h2 style="color: rgb(175, 175, 175);">Napíšte nám</h2>
-            <form action="https://formspree.io/f/moqggnlo" method="post">
-                <input name="Meno a priezvisko" type="text" placeholder="Meno a priezvisko" required>
-                <input name="Email" type="email" placeholder="Email@email.sk" required>
-                <input name="tel. číslo" type="tel" placeholder="+421 123 456 789" required>
-                <textarea id="requests" name="správa" placeholder="Sem zadajte správu." required></textarea>
-                <button type="submit">ODOSLAŤ</button>
-            </form>
-        </div>
-        <div class="info-section">
-            <h2>Kontaktné info</h2>
-            <p><strong style="color: rgb(9, 199, 199);">Facebook:</strong> <a href="https://fb.com" target="_blank">fb.com</a></p>
-            <p><strong style="color: rgb(9, 199, 199);">Pôsobime:</strong> Prešov + okolie</p>
-            <p><strong style="color: rgb(9, 199, 199);">Mobil:</strong> 0900 000 000</p>
-            <p><strong style="color: rgb(9, 199, 199);">Email:</strong> <a href="">pato@gmail.com</a></p>
-            <p><strong style="color: rgb(9, 199, 199);">Otvorení:</strong> NON-STOP</p>
-        </div>
-
-</div>
-
-</body>
-
-</html>
+window.addEventListener('load', () => {
+    document.querySelector('.loading-screen').classList.add('hidden');
+});
