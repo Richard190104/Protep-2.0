@@ -1,960 +1,330 @@
-*{
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTEP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="JS.js"></script>
 
-.loading-screen{
-    width: 100%;
-    height: 100%;
-    color: white;
-    position: fixed;
-    background-color: rgb(24, 21, 21);
-    z-index: 1000;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    z-index: 20000;
-}
-.loader{
-    min-width: 50px;
-    min-height: 50px;
-    border: 15px solid rgba(36, 32, 32, 0.979);
-    border-top: 15px solid rgb(5, 213, 228);
-    border-radius: 150px;
-    animation: loading 1s infinite;
-}
-@keyframes loading {
-    from{
-        transform: rotate(0turn);
-    }
-    to{
-        transform: rotate(1turn);
-    }
-}
+</head>
 
-.loading-screen.hidden{
-    animation: loader-hide 1s forwards;
-   
-}
-@keyframes loader-hide {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-        z-index: -1;
-    }
-    
-   
-}
+<body>
 
+    <div class="loading-screen">
+        <p style="font-size: 150%;"> <b style="color: rgb(5, 213, 228);">Pro</b>Tep</b> </p>
+        <div class="loader">
 
-.home-page-container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-   
-    top: 0;
-    min-height: 700px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.829),rgba(1, 58, 58, 0.5)),url('images/obrazok1.jpg');
-}
-
-
-.navbar{
-  position: fixed;
-    display: flex;
-    width: 80%;
-    height: 80px;
-    max-width: 1920px;
-    left: 0;
-    top: 0;
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.11);
-    justify-content: center;
-    padding: 0px 10px;
-    align-items: center;
-    border-bottom: 3px solid rgba(9, 199, 199, 0.205);
-    z-index: 1000;
-}
-
-.navbar.background{
-  animation: blacken 0.5s forwards;
-}
-
-@keyframes blacken {
-  from{
-    height: 0;
-    width: 0;
-    transform: translateX(50%);
-    background-color: rgba(255, 255, 255, 0.555);
-  }
-  to{
-    background-color: rgb(36, 32, 32);
-    position: fixed;
-     height: 80px;
-     transform: translateX(0%);
-     border-bottom: 5px solid rgba(0, 255, 255, 0.308);
-     width: 100%;
-     border-radius: 0;
-    }
-  
-}
-.navbar.transparent{
-  animation: relate 0.3s forwards, whiten 0.3s ease;
-  
-}
-
-@keyframes whiten {
-  0%{
-    background-color: rgb(36, 32, 32);
-    height: 80px;
-  }
-  90%{
-    background-color: rgba(255, 255, 255, 0.11);
-     height: 0;
-    }
-    
-}
-@keyframes relate {
-  0%{position: fixed;
-    width: 100%;}
-  90%{position: fixed;
-    width: 100%;}
-  100%{
-    position: static;
-    width: 80%;
-  }
-}
-
-
-.navbar-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0% 5vw;
-    width: 100%;
-    margin: 0px 20px;
-    max-width: 1920px;
-    font-size: 100%;
-    color: rgb(9, 199, 199);
-
-}
-
-.navbar-container ul{
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    position: relative;
-    align-items: center;
-    
-}
-
-.navbar-container .underline{   
-    margin: 0px 15px;
-    margin-top: 15px;
-    cursor: pointer;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-}
-
-.navbar-container .underline a{
-    text-decoration: none;
-    color: white;
-}
-
-.navbar-container .underline::after{
-    content: '';
-    position: relative;
-    display: inline-block;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    background:rgb(9, 199, 199);   
-    transform: scaleX(0);
-    transform-origin: bottom left;
-    transition: transform 1s ease;
-    
-}
-
-
-.navbar-container .underline:hover::after{   
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-.menu-opener{
-    display: none;
-}
-
-.menu-btn{
-    visibility: visible;
-    width: 30px;
-    cursor: pointer;
-    
-  }
-  
-  .menu-btn-line {
-    width: 100%;
-    height: 2px;
-    margin-bottom: 4px;
-    background-color: rgb(9, 199, 199);
-    transition: transform 0.3s ease;
-  }
-  
-
-  .menu-btn.open .line-1 {
-    transform: translateY(4px) translateX(-2px) rotate(70deg);
-   
-  }
-  
-  .menu-btn.open .line-2 {
-    opacity: 0;
-  }
-  
-  .menu-btn.open .line-3 {
-    transform: translateY(-8px) translateX(8px) rotate(-70deg);
-   
-  }
-
-  .underline.btn{
-    font-size: 80%;
-    
-  }
-  .underline.btn a{
-    text-decoration: none;
-    color: white;
-    
-  }
-
-  #slide-bar{
-    list-style-type: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.103);
-    border-radius: 25px;
-    width: 80%;
-    transform: translateY(-1000px);
-    border-bottom: 3px solid rgba(9, 199, 199, 0.281);
-  }
-
-  #slide-bar li{
-    padding: 15px;
-  }
-
-  #slide-bar{
-    display: flex;
-    justify-content: center;
-    align-items: center ;
-  }
-
-  #slide-bar.active{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-
-  
-
-  @media screen and (max-width: 1200px) {
-    .navbar ul{
-    position: absolute;
-     top: -1000px;
-   }    
-   .menu-opener{
-    display: flex;
-}
-.aboutus-main-container{
-    flex-direction: column;
-   width: 100%;
-}
-
-
-#slide-bar.slide-bar-background{
-  position: fixed;
-  background-color: rgb(36, 32, 32);
-  z-index: 100;
-  width: 100%;
-  border-radius: 0;
-  border-bottom: 3px solid rgb(9, 199, 199);
-  
-}
-
-#slide-bar.active.slide-bar-background{
-  margin-top: 80px;
-
-}
-
-}
-@keyframes slideIn {
-    from { transform: translate(0%, -100%); } /* Start from top */
-    to { transform: translate(0%, -2%); }
-  }
-  
-  @keyframes slideOut {
-    from { transform: translate(0%, -2%); } /* Start from original position */
-    to { transform: translate(0%, -100%); }
-    
-  }
-
-
-
-.home-page-text{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin-bottom: 50px;
-    height: 80%;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    
-}
-
-
-.home-page-text h1{
-    border-top: 3px solid rgb(9, 199, 199);
-    padding: 15px;
-    font-size: 300%;
-    border-bottom: 3px solid rgb(9, 199, 199);
-}
-
-.home-page-text p{
-    margin-top: 15px;
-    font-size: 125%;
-}
-
-.home-page-text .contact-us-button{
-    margin-top: 25px;
-    padding: 15px;
-    border: 3px solid rgb(9, 199, 199);
-    cursor: pointer;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-   
-    
-}
-
-.home-page-text .contact-us-button:not(:hover){   
-    animation: normalise 1s forwards;
-}
-
-.home-page-text .contact-us-button:hover{   
-    animation: expand 1s forwards;
-}
-
-@keyframes expand{
-    from{width: 150px;
-      transform: translateY(0px);
-    }
-    to{
-        background-color: rgba(9, 199, 199, 0.377);
-        width: 300px;
-        transform: translateY(15px);
-    }
-}
-
-@keyframes normalise{
-    from{width: 300px;
-    background-color: rgba(9, 199, 199, 0.377);
-    transform: translateY(15px);
-    }
-    to{
-        background-color: rgba(9, 199, 199, 0);
-        width: 150px;
-        transform: translateY(0px);
-    }
-}
-
-.aboutus-main-container{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    max-width: 1920px;
-     
-}
-
-
-
-.aboutus-container.left{
-    display: flex;
-    width: 40%;
-    min-height: 100%;
-    padding: 50px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative; 
-    z-index: 5;
-    border-top: 5px solid rgb(9, 199, 199);
-    border-radius: 25px;
-}
-
-.aboutus-container.left:hover{
-    animation: border-resize 0.5s forwards;
-}
-
-@keyframes border-resize {
-    from{
-        width: 40%;
-    }
-    to{
-        width: 80%;
-        margin-left: 5%;
-       
-    }
-}
-
-.aboutus-container.left:not(:hover){
-    animation: border-resize-not 0.5s forwards;
-}
-
-@keyframes border-resize-not{
-    from{
-        width: 80%;
-        margin-left: 5%;
-    }
-    to{
-        width: 40%;
+        </div>
+    </div>
+    <section id="home"></section>
+    <div class="home-page-container">
+    <nav class="navbar">
+        <div class="navbar-container">
+        <p style="font-size: 150%;"> <b style="color: white;">Pro</b>Tep</b> </p>
+       <div>
+    <ul>
+        <div class="underline"><li> <a  href="#home">DOMOV</a></li></div>
+        <div class="underline"><li> <a  href="#aboutus">O NÁS</a></li></div>
+        <div class="underline"><li> <a  href="#services">SLUŽBY</a></li></div>
+        <div class="underline"><li> <a href="#prices">CENNÍK</a></li></div>
+        <div class="underline"><li> <a  href="#contactus">KONTAKT</a></li></div>
         
-    }
-}
 
+    </ul>
 
-
-.aboutus-container.right:hover{
-    animation: border-resize2 0.5s forwards;
-}
-
-@keyframes border-resize2 {
-    from{
-        width: 40%;
-    }
-    to{
-        width: 42%;
-    }
-}
-
-.aboutus-container.right:not(:hover){
-    animation: border-resize2-not 0.5s forwards;
-}
-
-@keyframes border-resize2-not {
-    from{
-        width: 42%;
-    }
-    to{
-        width: 40%;
-    }
-}
-
-
-
-.aboutus-container.right{
-    padding: 50px; 
-    border-radius: 25px;
-    left: -15px;
-    width: 30%;
-    min-height: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    border-bottom: 5px solid rgb(9, 199, 199);
-    
-    
-}
-
-.image2{
-    box-shadow: 0px 5px 15px rgb(121, 117, 117); 
-    border-radius: 5px;
-     max-width: 30%;
-      position: absolute; 
-      right: 0; 
-      bottom: 0px;
-      background-color: white;
-}
-
-@media screen and (max-width: 1200px) {
-
-.aboutus-main-container{
-    flex-direction: column;
-}
-.aboutus-container.left{
-    width: 100%;
-    padding: 0;
-    padding-top: 15px;
-    margin-right: 10px;
-    height: calc(100% + 50px);
-}
-.aboutus-container.right{
-    width: calc(100% - 60px);
-    padding: 30px;
-    margin: 10px;
-    margin-top: 50px;
-    color: black;
    
+    <div class="menu-opener">
+        <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
+            <div class="menu-btn-line line-1"></div>
+            <div class="menu-btn-line line-2"></div>
+            <div class="menu-btn-line line-3"></div>
+            
+          </div>
+        </div>
+       </div>
+    </div>
 
+    </nav>
+    <nav style="width: 100%;">
+    <div style="overflow: hidden; width: 100%; justify-content: center; display: flex; min-height: 228px; position: static;">
+    <ul id="slide-bar">
+        <div class="underline btn"><li> <a href="#home">DOMOV</a></li></div>
+        <div class="underline btn"><li> <a href="#aboutus">O NÁS</a></li></div>
+        <div class="underline btn"><li> <a href="#services">SLUŽBY</a></li></div>
+        <div class="underline btn"><li> <a href="#prices">CENNÍK</a></li></div>
+        <div class="underline btn"><li> <a href="#contactus">KONTAKT</a></li></div>
+        
 
+    </ul>
+</div>
+</nav>
     
-}
-.image2{
-    bottom: -50px;
-    right: 15px;
-}
-.aboutus-container.right:not(:hover){
-    animation: border-resize2-not 0.5s forwards;
-}
 
-.aboutus-container.left:hover{
-    animation: border-resize 0.5s forwards;
-}
+    <div class="home-page-text load" id="home-page-text">
+        <h1 style="text-transform: uppercase;">Vitajte na stránke PRO<b style="color: rgb(9, 199, 199);">TEP</b></h1>
+        <p>Ponúkame Vám profesionálne tepovacie a upratovacie služby za bezkonkurenčné ceny!</p>
+        <h3 class="contact-us-button underline"><a style="text-decoration: none; color: white;" href="#contactus">Kontaktujte nás</a></h3>
+    </div>
+</div>
+<section id="aboutus"></section>
 
-@keyframes border-resize {
- 
-}
+<div style="justify-content: center; display: flex; align-items: center;">
+<div class="aboutus-main-container load"  id="aboutus-main-container">
+    <div class="aboutus-container left load">
+        <img style="box-shadow: 0px 5px 15px rgb(121, 117, 117); border-radius: 5px; max-width: 70%;" src="images/cleaning.jpg" alt="">
+        <img class="image2" src="images/cleaning.jpg" alt="">
+    </div>
+    <div class="aboutus-container right ">
+        <h1 class="load" style="border-bottom: 3px solid rgb(9, 199, 199); color: rgb(80, 78, 78);">Niečo o nás</h1>
+        <p class="load" style="padding: 5px; justify-content: center; display: flex; color: rgb(121, 117, 117); font-size: 120%;">
+            Máte na vašom koberci či nábytku škvrnu, s ktorou si neviete rady? <br> 
+            Alebo jednoducho stratili svoj pôvodný lesk a sviežosť?<br>
+            Tak využite naše služby a budete spokojní! <br>
+            Naša misia je jednoduchá: poskytovať služby, 
+            ktoré prekračujú očakávania našich zákazníkov. 
+            Používame najmodernejšie technológie a ekologicky šetrné čistiace 
+            prostriedky. Veríme, že čistota by nemala byť dosiahnutá na úkor
+             zdravia našich zákazníkov ani životného prostredia.</p>
+    </div>
+</div>
 
-.aboutus-container.left:not(:hover){
-    animation: border-resize-not 0.5s forwards;
-}
+</div>
+<section id="services"></section>
 
-@keyframes border-resize-not{
- 
-}
+<div class="services-main-container">
+    <h1 style=" margin-bottom: 50px; margin-top: 80px;">Služby</h1>
+    <div class=" about-us-section load" style="flex-direction: column;">
+       
+          
+        <div style="justify-content: center; display: flex; flex-direction: row; align-items: center; max-width: 1920px;">
+      <div class="services-content ">
+        
+        <div class=" services-content-box">
+          <div class="image-container"><img src="images/carpets.jpg" class="services-image"> </div>
+          <p class="services-text-p headline"> Tepovanie kobercov</p>
+          <p class="services-text-p"> <br> Hĺbkové čistenie kusových a metrážnych kobercov – či už u Vás doma alebo v našich priestoroch. Pri využití čistenia v našich priestoroch sa nemusíte časovo viazať - koberec vyzdvihneme, dôkladne vyčistíme a dovezieme späť!
+            </p>
+          </div>
+        
+          <div class="services-content-box">
+            <div class="image-container"><img src="images/furniture.jpg" class="services-image"> </div>
+            <p class="services-text-p headline">Tepovanie čalúnenia</p>
+            <p class="services-text-p">
+              <br>Efektívne odstránenie usadenej špiny, mastných škvŕn, zápachu, chlpov a vlasov z Vášho čalúneného nábytku, sedacej súpravy, stoličky či iných čalúnených povrchov. Používame ekologické čistiace prostriedky a pokročilé technológie, ktoré zaručujú šetrné a efektívne čistenie.
+            </p>   
+          </div>
+         
+          <div class=" services-content-box">
+            <div class="image-container"><img src="images/matraces.jpeg" class="services-image"> </div>
+            <p class="services-text-p headline"> Tepovanie matracov</p>
+            <p class="services-text-p">
+             <br> Zaručujeme dôkladné čistenie a dezinfekciu matracov – odstránenie prachu, roztočov, baktérii a škvŕn pre lepšiu hygienu a kvalitu Vášho spánku.
+              </p>
+            </div>
 
+        </div> 
+      </div>
 
+      <div style="justify-content: center; display: flex; flex-direction: row; align-items: center; max-width: 1920px;">
+        <div class="services-content">
+          
+          <div class=" services-content-box">
+            <div class="image-container"><img src="images/car.jpg" class="services-image"> </div>
+            <p class="services-text-p headline"> Tepovanie auta</p>
+            <p class="services-text-p"> <br>Zvýšte komfort Vašej jazdy! 
+             <br> Kompletné tepovanie a vyčistenie interiéru Vášho auta. Naša služba zahŕňa hĺbkové čistenie sedadiel, kobercov a všetkých textilných povrchov; odstránenie nečistôt, škvŕn, pachov a alergénov pomocou moderných technológií a ekologických čistiacich prostriedkov.
+              
+              </p>
+            </div>
+          
+            <div class="services-content-box">
+              <div class="image-container"><img src="images/windows.jpg" class="services-image"> </div>
+              <p class="services-text-p headline">Umývanie okien</p>
+              <p class="services-text-p">
+               <br> Umývanie jednokrídlových, dvojkrídlových, trojkrídlových okien či balkónových dverí pre domácnosti. Zabezpečíme dôkladné čistenie vnútorných aj vonkajších skiel, rámov a parapetov. Odstránime všetky nečistoty a Vaše okná budú opäť dokonalé čisté a žiarivé bez šmúh.
+              </p>   
+            </div>
+           
+            <div class="services-content-box">
+              <div class="image-container"><img src="images/household.jpg" class="services-image"> </div>
+              <p class="services-text-p headline">Upratovanie domácností</p>
+              <p class="services-text-p">
+               <br> Ponúkame jednorazové upratovanie domácnosti, jednorazové kolaudačné upratovanie po rekonštrukcii, výstavbe či pravidelné upratovanie domácnosti v požadovanom intervale. Máme pre Vás širokú ponuku služieb, ktorú prispôsobíme Vašim potrebám.              </p>   
+            </div>
 
-.aboutus-container.right:hover{
-    animation: border-resize2 0.5s forwards;
-}
+          </div> 
+        </div>
 
-@keyframes border-resize2 {
- 
-}
-
-.aboutus-container.right:not(:hover){
-    animation: border-resize2-not 0.5s forwards;
-}
-
-@keyframes border-resize2-not {
-   
-}
-
-
-}
-
-.services-main-container{
-    margin-top: 50px ;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    background-image: url('images/services-background.jpg');
-}
-
-.services-main-container h1{
-    color: rgb(255, 255, 255);
-    border-bottom: 3px solid rgb(9, 199, 199);
-}
-
-
-
-
-
-/*////////////////////////////////////////////////////////////////////////*/
-
-
-.services-text-p{
-    text-align: center; 
-    font-size: 105%;
-  }
-  
-  .headline{
-    font-size: 135%;
-    font-weight: bolder;
-    color: rgb(9, 199, 199);
-  }
-  
-  .services-content{
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-  }
-  
-  .services-content-box{
-    color: white;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.082);
-    border-radius: 10px;
-    border-bottom: 4px solid rgb(9, 199, 199);
-    max-width: 500px;
-    max-height: 300px;
-    width: 40%;
-    margin: 0px 5px;
-    text-align: left;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 35px;
-  }
-  .services-content-box:hover{
-    animation: slightly-up 1s forwards;
-  }
-  .services-content-box:not(:hover){
-    animation: slightly-down 1s forwards;
-  }
-  
-  .services-background{
-    width: 1000px;
-    height: 1000px;
-    background-color: black;
-  }
-  
-  @keyframes slightly-up {
-    from { transform: translate(0%, 0%); } 
-    to { transform: translate(0%, -5%); }
-  }
-  
-  
-  @keyframes slightly-down {
-    from { transform: translate(0%, -5%); } 
-    to { transform: translate(0%, 0%); }
-  }
-  
-  
-  .services-image{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 300px;
-    
-  }
-  .image-container {
-    position: relative;
-    width: 30%; /* You can set a fixed width if needed, e.g., 300px */
-    padding-top: 30%; /* This creates a square container */
-    border-radius: 300px;
-  
-  }
-  
-  
-  
-  .example-image{
-    margin: 5vh 5vw;
-    border: 3px solid white ;
-    border-radius: 30px;
-  }
-  
-  @media screen and (max-width: 1000px) {
-    .services-content{
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-    .services-content-box{
-      width: 60%;
-    }
-    .about-us-pictures-container{
-      flex-direction: column;
-    }
-    .aboutus-image-container{
-      margin-bottom: 50px;
-    }
-  }
-  
-
-  /*contact section*/
-
-  
-.prices-section{
-    padding: 20px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: calc(100% - 80px);
-    width: 100%;
-    position: relative;
-    max-width: 100%;
-    background-color: rgb(34, 34, 34);
-    
-  }
-  
+    </div>
+</div>
  
 
-  @keyframes showoff {
-    from{background-color: rgba(34, 34, 34, 0.637);}
-    to{background-color: rgb(34, 34, 34);}
-  }
 
-
-  .tepovanie-section{
-    display: flex;
-    background: linear-gradient(to right, #d8d8d815, #0a3f5e21);
-    flex-direction: row;
-    width: 100%;
-    max-width: 1920px;
-    justify-content: center;
-    border-radius: 25px;
-    border-bottom: 3px solid rgba(9, 199, 199, 0.363);
-    margin-top: 50px;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transform: translateX(0%);
-  }
-  .tepovanie-section.slide-from-right{
-    animation: slid 1s forwards;
-  }
-
-@keyframes slid {
-  from{transform: translateX(-50%);}
-  to{transform: translateX(0%);}
-}
-
-  .tepovanie-section p::after {
-    content: '';
-    display: block;
-    width: 80%;
-    height: 2px;
-    background: #1bc6c9;
-    margin: 10px auto;
-    border-radius: 2px;
-}
   
-  .item {
-  
-    border-radius: 15px;
-    color: rgb(255, 255, 255);
-    font-size: 105% ;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    align-items: center;
-    margin: 10px 10px;
-    padding: 30px 20px;
-    cursor: pointer;
-  }
-  .item::before {
-    
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 80%;
-    left: 0;
-    border-radius: 15px;
-    border: 2px solid rgb(9, 199, 199);
-    transition: width 1s ease;
-  }
+<section id="prices"></section>
 
-  .item.active::before{
-    width: 100%;
-    height: 100%;
-  }
-  
-  .item:hover{
-    animation: slightly-up 1s forwards;
-  }
-  .item:not(:hover){
-    
-    animation: slightly-down 1s forwards;
-  }
-  
-  #c-button{
-    transform: translateX(-3050%);
-    color: rgb(255, 255, 255);
-    border: 2px solid rgb(9, 199, 199);
-    border-radius: 10px;
-    padding: 15px;
-    width: 30%;
-    max-width: 400px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  #c-button.show{
-    animation: cshow 1s forwards;
-  }
-  
-  #c-button.show:hover{
-    animation: cshow 1s forwards, hover-effect 0.5s forwards;
-  }
-  #c-button.show:not(:hover){
-    animation: cshow 1s forwards, unhover-effect 0.5s forwards;
-  }
-  
-  
-  
-  @keyframes cshow {
-    from{ transform: translateX(-250%);}
-    to{transform: translateX(0%);}
-  }
-  
-  @keyframes hover-effect {
-    from{
-        background-color: rgba(9, 199, 199, 0);
-    }
-    to{
-        background-color: rgba(9, 199, 199, 0.479);
-    }
-  }
+<div id="here" style="width: 100%; justify-content: center; align-items: center; display: flex;">
+    <div class="prices-section " id="prices-section">
+      <h1 style="border-bottom: 3px solid rgb(9, 199, 199); margin-bottom: 30px; font-weight: bolder; color: rgb(255, 255, 255); margin-top: 100px;">Cenník</h1>
+     
+      
+      <div class="tepovanie-section">
+        
+        <div style=" justify-content: center; align-items: center; display: flex;"> 
+            <p style="font-size: 180%; color: rgb(255, 255, 255);">Cenník služieb - <br><b style="color: rgb(9, 199, 199);">Tepovanie</b></p>
+        </div>
+        <div style="  display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center; min-width: 30%;">
+          <div class="item m2" onclick="toggleChoice(this)" id="Tepovanie metrážnych kobercov"> 
+            <p>Tepovanie metrážnych kobercov</p>
+            <p>Od 2,5€/m2</p>
 
-  @keyframes unhover-effect {
-    from{
-        background-color: rgba(9, 199, 199, 0.479);
-    }
-    to{
-        background-color: rgba(9, 199, 199, 0);
-    }
-  }
-  
-  
-  @media screen and (max-width: 1200px) {
-    .tepovanie-section{
-      flex-direction: column;
-    }
-    .about-us-section{
-      flex-direction: column;
-    }
-  }
-  
-.show-work{
-    width: 100%;
-    background-color: rgb(29, 28, 28);
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-  
-.show-work p{
-    margin: 20px;
-    font-size: 125%;
-}
-#our-work-button{
-    padding: 5px;
-    border: 2px solid white;
-    min-width: 70px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 5px;
-   
-}
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie kusových kobercov"> 
+            <p id="this">Tepovanie kusových kobercov	</p>
+            <p>Od 3€/m2</p>
 
-#our-work-button:hover{
-    animation: expand 1s forwards;
-}
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie sedačiek"> 
+            <p id="this">Tepovanie sedačiek</p>
+            <p>	Od 10€/miesto sedenia</p>
 
-#our-work-button:not(:hover){
-    animation: normalise 1s forwards;
-}
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie kresiel"> 
+            <p id="this">Tepovanie kresiel</p>
+            <p>	Od 15€</p>
+
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie vankúšov"> 
+            <p>Tepovanie vankúšov</p>
+            <p>		Od 3€/ks</p>
+
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie matracov"> 
+            <p>Tepovanie matracov (1 lôžko, 1strana)</p>
+            <p>	Od 10€</p>
+
+          </div>
+        </div>
 
 
+        <div  style=" min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center;">
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie taburetiek"> 
+            <p>Tepovanie taburetiek	</p>
+            <p>Od 5€/ks</p>
+
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie stoličiek"> 
+            <p>Tepovanie stoličiek</p>
+            <p> 	Od 4€/ks</p>
+
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie čalúnenia postelí"> 
+            <p>Tepovanie čalúnenia postelí</p>
+            <p>	Od 15€</p>
+
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie manželských postelí"> 
+            <p>Tepovanie manželských postelí	</p>
+            <p>Od 25€</p>
+
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Tepovanie rohovej lavice"> 
+            <p>Tepovanie rohovej lavice</p>
+            <p>	Od 15€</p>
+
+          </div>
+          <div class="item load" onclick="toggleChoice(this)" id="Impregnácia"> 
+            <p>Impregnácia	</p>
+            <p>	Od 3€/miesto sedenia</p>
+
+          </div>
+        
+        </div>
+      
+    </div>
 
 
-@keyframes our-work-show {
-    from{
-        transform: translateY(-100%);
-    }
-    to{
-        transform: translateY(0%);
-    }
-}
+      
+      <div class="tepovanie-section ">
+        <div style=" justify-content: center; align-items: center; display: flex;"> 
+            <p style="font-size: 180%; color: rgb(255, 255, 255);">Cenník služieb - <br><b style="color: rgb(9, 199, 199)">Upratovanie</b></p>
+        </div>
+        <div style="min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center;">
+          <div class="item load" onclick="toggleChoice(this)"> 
+            <p>Tepovanie metrážnych kobercov</p>
+            <p>Od 2,5€/m2</p>
+          </div>
+          <div class="item load" onclick="toggleChoice(this)"> 
+            <p>Tepovanie kusových kobercov	</p>
+            <p>Od 3€/m2</p>
+          </div>
 
-.contact-container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(29, 28, 28);
-}
+        </div>
 
-.form-section, .info-section {
-    margin: 0 10px;
-}
 
-.info-section{
-    margin-bottom: 100px;
-}
-.form-section {
-    padding: 20px;
-}
-.form-section input, .form-section textarea {
-    width: 90%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background-color: #ffffff1a;
-    color: rgb(175, 175, 175);
-}
-.form-section textarea {
-    height: 100px;
-    resize: none;
-}
-.form-section button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #555;
-    color: rgb(175, 175, 175);
-    cursor: pointer;
-}
-.info-section h2 {
-    margin-bottom: 20px;
-    color: rgb(175, 175, 175);
-}
-.info-section p {
-    margin: 5px 0;
-    color: rgb(175, 175, 175);
-}
-.info-section a {
-    color: rgb(175, 175, 175);
-    text-decoration: none;
-}
+        <div  style=" min-width: 30%; display: flex; flex-direction: column;  margin: 0px 5px; justify-content: center; align-items: center; ">
+          <div class="item load" onclick="toggleChoice(this)"> 
+            <p>Tepovanie taburetiek	</p>
+            <p>Od 5€/ks</p>
+          </div>
+          <div class="item load" onclick="toggleChoice(this)"> 
+            <p>Tepovanie stoličiek</p>
+            <p> 	Od 4€/ks</p>
+          </div>
 
-@media screen and (max-width: 1200px) {
-    .contact-container{
-        flex-direction: column;
-    }
-}
-.load{
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+        
+        </div>
 
-.load.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+    </div>
+    <p style="color: rgb(179, 178, 178); font-size: 115%;"> <b>Minimálna cena objednávky: 30€ </b><br>
+      Ceny sú stanovené za bežné znečistenie. Konečná cena sa odvíja od miery znečistenia a veľkosti nábytku. 
+     <br> <b>Konečnú cenu oznamujeme vopred!</b>
+      </p>
+      <a href="#contactus" id="c-button" onclick="copyrequests()">Kontaktujte nás</a>
 
+
+    </div>
+  </div>
+
+<div class="show-work">
+    <div style="z-index: 1; max-width: 1920px; background: linear-gradient(to right, #1bc6c9,  #0485cf5d);  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; border-radius: 15px; display: flex; flex-direction: row; justify-content: center; align-items: center; border-bottom: 3px solid white;">
+    <p>Ukážku našej práce nájdete tu:</p>
+    <p id="our-work-button" > Ukážka práce </p>
+    </div>
+</div>
+
+<div style=" padding: 20px 0px ; width: 100%; background-color: rgb(29, 28, 28); display: flex; justify-content: center;">
+    <h1 style=" border-bottom: 3px solid rgb(9, 199, 199); font-weight: bolder; color: rgb(255, 255, 255);">Kontakt</h1>
+
+</div>
+
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10466.694026161374!2d21.21303093950349!3d49.01679614867751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ef2b8c846e301%3A0x695afa60f44f0b5a!2sMirka%20Ne%C5%A1pora%2C%20080%2001%20Pre%C5%A1ov!5e0!3m2!1ssk!2ssk!4v1719165291217!5m2!1ssk!2ssk" width="100%" height="600px " style="border:0;" allowfullscreen="" loading="none" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<section id="contactus"></section>
+<div class="contact-container">
+        <div class="form-section">
+            <h2 style="color: rgb(175, 175, 175);">Napíšte nám</h2>
+            <form action="https://formspree.io/f/moqggnlo" method="post">
+                <input name="Meno a priezvisko" type="text" placeholder="Meno a priezvisko" required>
+                <input name="Email" type="email" placeholder="Email@email.sk" required>
+                <input name="tel. číslo" type="tel" placeholder="+421 123 456 789" required>
+                <textarea id="requests" name="správa" placeholder="Sem zadajte správu." required></textarea>
+                <button type="submit">ODOSLAŤ</button>
+            </form>
+        </div>
+        <div class="info-section">
+            <h2>Kontaktné info</h2>
+            <p><strong style="color: rgb(9, 199, 199);">Facebook:</strong> <a href="https://fb.com" target="_blank">fb.com</a></p>
+            <p><strong style="color: rgb(9, 199, 199);">Pôsobime:</strong> Prešov + okolie</p>
+            <p><strong style="color: rgb(9, 199, 199);">Mobil:</strong> 0900 000 000</p>
+            <p><strong style="color: rgb(9, 199, 199);">Email:</strong> <a href="">pato@gmail.com</a></p>
+            <p><strong style="color: rgb(9, 199, 199);">Otvorení:</strong> NON-STOP</p>
+        </div>
+
+</div>
+
+</body>
+
+</html>
