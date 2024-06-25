@@ -77,21 +77,48 @@ function updateSlider() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const items = document.querySelectorAll('.load');
-
+    const aboutus_section = document.querySelector('.prices-section');
+    const tepocanie_section = document.querySelectorAll('.tepovanie-section');
+    const navbar = document.querySelector('.navbar');
+    const home_page = document.querySelector('.home-page-container');
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.001
     };
 
     const observerCallback = (entries, observer) => {
+
+
+
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
+
+                if (entry.target === aboutus_section) {
+                    tepocanie_section.forEach(tsection =>{
+                        tsection.classList.add('slide-from-right');
+                    }); 
+                }
+                if (entry.target === home_page) {
+                    navbar.classList.remove('background');
+                    navbar.classList.add('transparent');
+                }
                
-            }
-            else{
+                }
+             else {
                 entry.target.classList.remove('show');
+                if (entry.target === aboutus_section) {
+                  
+                    tepocanie_section.forEach(tsection =>{
+                        tsection.classList.remove('slide-from-right');
+                    });               
+                 }
+
+                 if (entry.target === home_page){
+                    navbar.classList.add('background');
+                    navbar.classList.remove('transparent');
+                }
             }
         });
     };
@@ -101,6 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
     items.forEach(item => {
         observer.observe(item);
     });
+    observer.observe(aboutus_section);
+    observer.observe(home_page);
 });
 
 
