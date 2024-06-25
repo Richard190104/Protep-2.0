@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    z-index: 20000;
 }
 .loader{
     min-width: 50px;
@@ -54,6 +55,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+   
     top: 0;
     min-height: 700px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.829),rgba(1, 58, 58, 0.5)),url('images/obrazok1.jpg');
@@ -61,7 +63,7 @@
 
 
 .navbar{
-    position: flex;
+  position: fixed;
     display: flex;
     width: 90%;
     height: 80px;
@@ -69,17 +71,64 @@
     left: 0;
     top: 0;
     border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.062);
+    background-color: rgba(255, 255, 255, 0.11);
     justify-content: center;
+    padding: 0px 50px;
     align-items: center;
     border-bottom: 3px solid rgba(9, 199, 199, 0.205);
+    z-index: 1000;
+}
+.navbar.background{
+  animation: blacken 0.5s forwards;
+}
+
+@keyframes blacken {
+  from{
+    height: 0;
+    width: 0;
+    transform: translateX(50%);
+    background-color: rgba(255, 255, 255, 0.555);
+  }
+  to{
+    background-color: rgb(36, 32, 32);
+    position: fixed;
+     height: 80px;
+     transform: translateX(0%);
+     border-bottom: 5px solid rgba(0, 255, 255, 0.308);
+     width: 100%;
+     border-radius: 0;
+    }
+  
+}
+.navbar.transparent{
+  animation: relate 0.3s forwards, whiten 0.3s ease;
+  
+}
+
+@keyframes whiten {
+  0%{
+    background-color: rgb(36, 32, 32);
+    height: 80px;
+  }
+  90%{
+    background-color: rgba(255, 255, 255, 0.11);
+     height: 0;
+    }
+    
+}
+@keyframes relate {
+  0%{position: fixed;}
+  90%{position: fixed;}
+  100%{
+    position: relative;
+  }
 }
 
 
 .navbar-container{
-    justify-content: space-between;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0% 5vw;
     width: 100%;
     margin: 0px 20px;
@@ -283,20 +332,25 @@
 }
 
 @keyframes expand{
-    from{width: 150px;}
+    from{width: 150px;
+      transform: translateY(0px);
+    }
     to{
         background-color: rgba(9, 199, 199, 0.377);
         width: 300px;
+        transform: translateY(15px);
     }
 }
 
 @keyframes normalise{
     from{width: 300px;
     background-color: rgba(9, 199, 199, 0.377);
+    transform: translateY(15px);
     }
     to{
         background-color: rgba(9, 199, 199, 0);
         width: 150px;
+        transform: translateY(0px);
     }
 }
 
@@ -308,9 +362,10 @@
     justify-content: center;
     flex-direction: row;
     max-width: 1920px;
-    
-    
+     
 }
+
+
 
 .aboutus-container.left{
     display: flex;
@@ -335,7 +390,9 @@
         width: 40%;
     }
     to{
-        width: 42%;
+        width: 80%;
+        margin-left: 5%;
+       
     }
 }
 
@@ -345,10 +402,12 @@
 
 @keyframes border-resize-not{
     from{
-        width: 42%;
+        width: 80%;
+        margin-left: 5%;
     }
     to{
         width: 40%;
+        
     }
 }
 
@@ -622,6 +681,14 @@
     
   }
   
+ 
+
+  @keyframes showoff {
+    from{background-color: rgba(34, 34, 34, 0.637);}
+    to{background-color: rgb(34, 34, 34);}
+  }
+
+
   .tepovanie-section{
     display: flex;
     background: linear-gradient(to right, #d8d8d815, #0a3f5e21);
@@ -635,7 +702,16 @@
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateX(0%);
   }
+  .tepovanie-section.slide-from-right{
+    animation: slid 1s forwards;
+  }
+
+@keyframes slid {
+  from{transform: translateX(-50%);}
+  to{transform: translateX(0%);}
+}
 
   .tepovanie-section p::after {
     content: '';
