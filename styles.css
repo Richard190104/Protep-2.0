@@ -48,6 +48,7 @@
         z-index: -1;
     }
     
+   
 }
 
 
@@ -119,10 +120,13 @@
     
 }
 @keyframes relate {
-  0%{position: fixed;}
-  90%{position: fixed;}
+  0%{position: fixed;
+    width: 100%;}
+  90%{position: fixed;
+    width: 100%;}
   100%{
     position: static;
+    width: 80%;
   }
 }
 
@@ -584,6 +588,7 @@
   .headline{
     font-size: 135%;
     font-weight: bolder;
+    color: rgb(9, 199, 199);
   }
   
   .services-content{
