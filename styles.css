@@ -47,9 +47,7 @@
         opacity: 0;
         z-index: -1;
     }
-    100%{
-      display: none;
-    }
+    
 }
 
 
