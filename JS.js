@@ -4,7 +4,6 @@ function toggleMenu() {
     button.classList.toggle('open');
     var slideBar = document.getElementById('slide-bar');
     slideBar.classList.toggle('active');
-    var homepage = document.getElementById('home-page-text');
     if (slideBar.classList.contains('active')) {
         slideBar.style.animation = 'slideIn 1s forwards';
     } else {
@@ -79,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const items = document.querySelectorAll('.load');
     const aboutus_section = document.querySelector('.prices-section');
     const tepocanie_section = document.querySelectorAll('.tepovanie-section');
+    var button = document.getElementById('menu-btn');
+    var slideBar = document.getElementById('slide-bar');
     const navbar = document.querySelector('.navbar');
     const home_page = document.querySelector('.home-page-container');
     const observerOptions = {
@@ -103,6 +104,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (entry.target === home_page) {
                     navbar.classList.remove('background');
                     navbar.classList.add('transparent');
+                    slideBar.classList.remove('slide-bar-background');
+                    if (slideBar.classList.contains('active') ) {
+                        slideBar.style.animation = 'slideOut 0.1s forwards';
+                        button.classList.remove('open');
+                        slideBar.classList.remove('active');
+                    }
+                    
+                    
+                    
                 }
                
                 }
@@ -118,6 +128,14 @@ document.addEventListener('DOMContentLoaded', function() {
                  if (entry.target === home_page){
                     navbar.classList.add('background');
                     navbar.classList.remove('transparent');
+                    slideBar.classList.add('slide-bar-background');
+                    if (slideBar.classList.contains('active')) {
+                        slideBar.style.animation = 'slideOut 0.1s forwards';
+                        button.classList.remove('open');
+                        slideBar.classList.remove('active');
+                    }
+             
+
                 }
             }
         });
