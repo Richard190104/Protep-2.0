@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var button = document.getElementById('menu-btn');
     var slideBar = document.getElementById('slide-bar');
     const navbar = document.querySelector('.navbar');
-    const home_page = document.querySelector('.home-page-container');
+    const home_page = document.querySelector('.navbar-hide');
     const observerOptions = {
         root: null,
         rootMargin: '0px',
