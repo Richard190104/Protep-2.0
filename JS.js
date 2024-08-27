@@ -1,3 +1,11 @@
+  window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('query');
+            if (query) {
+                document.title = decodeURIComponent(query) + " | ProTep";
+            }
+        };
+
 function toggleMenu() {
 
     var button = document.getElementById('menu-btn');
