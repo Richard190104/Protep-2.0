@@ -1,8 +1,18 @@
   window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
-            const query = urlParams.get('query');
-            if (query) {
-                document.title = decodeURIComponent(query) + " | ProTep";
+            const query = urlParams.get('query') || '';
+            const decodedQuery = decodeURIComponent(query.toLowerCase());
+
+            // List of cleaning-related keywords
+            const cleaningKeywords = ['tepovanie', 'upratovanie', 'čistenie', 'tepovanie auta', 'tepovanie cennik'];
+
+            // Check if the query contains any cleaning-related keywords
+            const isCleaningRelated = cleaningKeywords.some(keyword => decodedQuery.includes(keyword));
+
+            if (isCleaningRelated) {
+                document.title = "ProTep | " + decodedQuery.charAt(0).toUpperCase() + decodedQuery.slice(1);
+            } else {
+                document.title = "Tepovanie Prešov | ProTep " + decodedQuery.charAt(0).toUpperCase() + decodedQuery.slice(1);
             }
         };
 
