@@ -12,7 +12,7 @@
             if (isCleaningRelated) {
                 document.title = "ProTep | " + decodedQuery.charAt(0).toUpperCase() + decodedQuery.slice(1);
             } else {
-                document.title = "Tepovanie Prešov | ProTep " + decodedQuery.charAt(0).toUpperCase() + decodedQuery.slice(1);
+                document.title = "Tepovanie a upratovanie Prešov | ProTep " + decodedQuery.charAt(0).toUpperCase() + decodedQuery.slice(1);
             }
         };
 
